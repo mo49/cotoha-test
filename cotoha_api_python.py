@@ -9,7 +9,7 @@ from bottle import route, run, template
 
 @route('/result')
 def result():
-    return result
+    return template('result', **result)
 
 # COTOHA API操作用クラス
 class CotohaApi:
@@ -411,4 +411,4 @@ if __name__ == '__main__':
     result_formated = json.dumps(result, indent=4, separators=(',', ': '))
     print (codecs.decode(result_formated, 'unicode-escape'))
 
-    run(host='localhost', port=8080, debug=True)
+    run(host='localhost', port=8080, reloader=True, debug=True)
