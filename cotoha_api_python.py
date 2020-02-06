@@ -5,7 +5,7 @@ import urllib.request
 import json
 import configparser
 import codecs
-from bottle import route, run
+from bottle import route, run, template
 
 @route('/result')
 def result():
